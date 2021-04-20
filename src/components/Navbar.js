@@ -1,98 +1,98 @@
-import React from 'react'
-import { Link } from 'gatsby'
-import github from '../img/github-icon.svg'
-import logo from '../img/logo.svg'
+import React from 'react';
+import { FacebookFilled, InstagramFilled, MenuOutlined } from '@ant-design/icons';
+import styled from 'styled-components';
+import Logo from '../img/logo.png';
+import { mediaSizes } from '../style/utils';
 
-const Navbar = class extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      active: false,
-      navBarActiveClass: '',
+const StyledNavbar = styled.nav`
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  background: rgba(0, 0, 0, 0.7);
+
+  ul {
+    ${mediaSizes.lessThan('sm')`
+        display: none;
+    `};
+    display: flex;
+    list-style: none;
+    width: 100%;
+    justify-content: center;
+
+    & div:last-child {
+      margin: auto;
+    }
+
+    li {
+      margin: 0 1rem;
+      padding: 1rem;
+
+      a {
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #f4f4f4;
+
+        span {
+          font-size: 1.5rem;
+          color: white;
+        }
+      }
+
+      a:hover {
+        color: #d9b036;
+      }
     }
   }
+`;
 
-  toggleHamburger = () => {
-    // toggle the active boolean in the state
-    this.setState(
-      {
-        active: !this.state.active,
-      },
-      // after state has been updated,
-      () => {
-        // set the class in state for the navbar accordingly
-        this.state.active
-          ? this.setState({
-              navBarActiveClass: 'is-active',
-            })
-          : this.setState({
-              navBarActiveClass: '',
-            })
-      }
-    )
-  }
+const StyledLogo = styled.img`
+  height: 90%;
+`;
 
-  render() {
-    return (
-      <nav
-        className="navbar is-transparent"
-        role="navigation"
-        aria-label="main-navigation"
-      >
-        <div className="container">
-          <div className="navbar-brand">
-            <Link to="/" className="navbar-item" title="Logo">
-              <img src={logo} alt="Kaldi" style={{ width: '88px' }} />
-            </Link>
-            {/* Hamburger menu */}
-            <div
-              className={`navbar-burger burger ${this.state.navBarActiveClass}`}
-              data-target="navMenu"
-              onClick={() => this.toggleHamburger()}
-            >
-              <span />
-              <span />
-              <span />
-            </div>
-          </div>
-          <div
-            id="navMenu"
-            className={`navbar-menu ${this.state.navBarActiveClass}`}
-          >
-            <div className="navbar-start has-text-centered">
-              <Link className="navbar-item" to="/about">
-                About
-              </Link>
-              <Link className="navbar-item" to="/products">
-                Products
-              </Link>
-              <Link className="navbar-item" to="/blog">
-                Blog
-              </Link>
-              <Link className="navbar-item" to="/contact">
-                Contact
-              </Link>
-              <Link className="navbar-item" to="/contact/examples">
-                Form Examples
-              </Link>
-            </div>
-            <div className="navbar-end has-text-centered">
-              <a
-                className="navbar-item"
-                href="https://github.com/netlify-templates/gatsby-starter-netlify-cms"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <span className="icon">
-                  <img src={github} alt="Github" />
-                </span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </nav>
-    )
-  }
-}
+export const Bars = styled(MenuOutlined)`
+  display: none;
+  color: #fff;
+ ${mediaSizes.lessThan('sm')`
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    font-size: 1.8rem;
+    cursor: pointer;
+  `}
+`;
 
-export default Navbar
+const Navbar = () => {
+  return (
+    <StyledNavbar>
+      <StyledLogo src={Logo} />
+      <div style={{ display: 'flex', alignItems: 'center', textTransform:'uppercase' }}>Pubik</div>
+      <ul>
+        <li>
+          <a href="#home">Home</a>
+        </li>
+        <li>
+          <a href="#about">About</a>
+        </li>
+        <li>
+          <a href={'https://www.facebook.com/PubikAplikacja'} target="_blank" rel="noreferrer">
+            <FacebookFilled />
+          </a>
+        </li>
+        <li>
+          <a href={'https://www.facebook.com/PubikAplikacja'} target="_blank" rel="noreferrer">
+            <InstagramFilled />
+          </a>
+        </li>
+      </ul>
+        <Bars />
+    </StyledNavbar>
+  );
+};
+
+
+export default Navbar;
