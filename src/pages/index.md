@@ -1,5 +1,7 @@
 ---
+templateKey: index-page
 pl:
+  templateKey: index-page
   title: Polish Title
   description: Polish Description
 en:
