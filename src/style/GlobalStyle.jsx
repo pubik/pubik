@@ -13,7 +13,7 @@ body {
    line-height: 1.6;
    height:100vh;
    overflow: hidden;
-   
+
    #___gatsby {
     width: 100%;
     height: 100%;

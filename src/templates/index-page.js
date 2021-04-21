@@ -5,7 +5,6 @@ import test1 from '../img/4.jpg';
 import test2 from '../img/2.jpg';
 import Layout from '../components/Layout';
 import styled from 'styled-components';
-import "@fontsource/space-mono";
 import Animation from '../components/Animation';
 
 const StyledSection = styled.section`
@@ -59,13 +58,8 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <IndexPageTemplate
-        image={frontmatter.image}
         title={frontmatter.title}
-        heading={frontmatter.heading}
-        subheading={frontmatter.subheading}
-        mainpitch={frontmatter.mainpitch}
         description={frontmatter.description}
-        intro={frontmatter.intro}
       />
     </Layout>
   );

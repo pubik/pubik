@@ -13,7 +13,7 @@ public_folder: /img
 
 i18n:
   structure: multiple_folders
-  locales: [en, cs, pl]
+  locales: [pl, en, cs]
   default_locale: pl
 
 collections:
@@ -21,11 +21,11 @@ collections:
     label: "Pages"
     i18n:
       structure: single_file
-      locales: [en, cs, pl]
+      locales: [pl, en, cs]
     files:
-      - file: "src/pages/index.md"
+      - name: "index"
         label: "Landing Page"
-        name: "index"
+        file: "src/pages/index.md"
         i18n: true
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page"}
