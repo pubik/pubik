@@ -4,8 +4,9 @@ import styled, { keyframes } from 'styled-components';
 import ReleaseCountdown from '../components/Countdown';
 import Logo1 from '../img/logo_600_noBg.png';
 import { mediaSizes } from '../style/utils';
+import LogoPlusText from './LogoPlusText';
 
-const StyledMain = styled.nav`
+const StyledMain = styled.div`
   width: 100%;
   height: 100%;
   position: absolute;
@@ -36,7 +37,7 @@ const anim3 = keyframes`
     left: -100%;
   }
   to {
-    left: 30%;
+    left: 0%;
   }
 `;
 
@@ -54,22 +55,23 @@ const anim5 = keyframes`
     top: 30%;
   }
   to {
-    top: 50%;
+    top: 60%;
   }
 `;
 
-// const anim6 = keyframes`
-//   from {
-//     top: 30%;
-//   }
-//   to {
-//     top: 50%;
-//   }
-// `;
+const anim6 = keyframes`
+  from {
+    top: -100%;
+  }
+  to {
+    top: 10%;
+  }
+`;
 
 const StyledBox1 = styled.div`
   width: 600px;
   height: 600px;
+  font-size: 5rem;
   background-image: url(${Logo1});
   left: 0;
   right: 0;
@@ -90,81 +92,57 @@ const StyledBox1 = styled.div`
   }
 `;
 const StyledBox2 = styled.div`
-  ${mediaSizes.lessThan('md')`display: none;`};
-  width: auto;
+  width: 100%;
   height: auto;
   color: white;
-  font-size: 3rem;
-  ${mediaSizes.lessThan('lg')`
-    font-size: 2rem;
-    line-height: 3rem;
-    left: 15%;
-  `};
-  line-height: 5rem;
   position: absolute;
   top: 30%;
-  left: 20%;
-  overflow: hidden;
-  text-align: left;
+  left: 0%;
   animation: ${anim5} 2s forwards 6s;
 `;
 
 const StyledText1 = styled.div`
+  width: 60%;
+  margin: auto;
   position: relative;
   left: -100%;
   animation: ${anim3} 3s forwards 3s;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 0 2rem;
-  ${mediaSizes.lessThan('lg')`
-    min-width: 200px;
-  `};
-  min-width: 300px;
-`;
+  padding: 0 10rem;
+  text-transform: uppercase;
+  line-height: 4rem;
+  box-sizing: border-box;
 
-const StyledText2 = styled.div`
-  position: relative;
-  right: -100%;
-  animation: ${anim4} 3s forwards 3s;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 0 2rem;
-  min-width: 300px;
-   ${mediaSizes.lessThan('lg')`
-     min-width: 200px;
-  `};
-`;
-
-const StyledBox3 = styled.div`
-  ${mediaSizes.lessThan('md')`display: none;`};
-  width: auto;
-  height: auto;
-  color: white;
-  font-size: 3rem;
-  line-height: 5rem;
-  position: absolute;
-  top: 150px;
-  right: 20%;
-  overflow: hidden;
-  text-align: left;
   ${mediaSizes.lessThan('lg')`
-    font-size: 2rem;
     line-height: 3rem;
-    right: 15%;
+    width: 80%
   `};
+`;
+
+
+export const StyledLogoContainer = styled.div`
+  position: absolute;
+  top: -100%;
+  margin: auto;
+  animation: ${anim6} 2s forwards 5s;
+  width: 100%;
 `;
 
 const Animation = () => (
   <StyledMain>
+    <StyledLogoContainer>
+      <LogoPlusText />
+    </StyledLogoContainer>
     <StyledBox1></StyledBox1>
     <StyledBox2>
       <StyledText1>
         <ReleaseCountdown />
       </StyledText1>
     </StyledBox2>
-    <StyledBox3>
-      <StyledText2>
-        Pubik - Comming Soon!
-      </StyledText2>
-    </StyledBox3>
+    {/*<StyledBox3>*/}
+    {/*  <StyledText2>*/}
+    {/*    PUBIK IS COMMING SOON!*/}
+    {/*  </StyledText2>*/}
+    {/*</StyledBox3>*/}
   </StyledMain>
 );
 

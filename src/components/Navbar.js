@@ -65,18 +65,27 @@ export const Bars = styled(MenuOutlined)`
     cursor: pointer;
   `}
 `;
+const StyledLogoName = styled.div`
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  font-family: 'Pacifico';
+`;
 
 const Navbar = () => {
   return (
     <StyledNavbar>
       <StyledLogo src={Logo} />
-      <div style={{ display: 'flex', alignItems: 'center', textTransform:'uppercase' }}>Pubik</div>
+      <StyledLogoName>Pubik</StyledLogoName>
       <ul>
         <li>
           <a href="#home">Home</a>
         </li>
         <li>
           <a href="#about">About</a>
+        </li>
+          <li>
+          <a href="#demo">Demo</a>
         </li>
         <li>
           <a href={'https://www.facebook.com/PubikAplikacja'} target="_blank" rel="noreferrer">

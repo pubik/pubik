@@ -6,6 +6,9 @@ import test2 from '../img/2.jpg';
 import Layout from '../components/Layout';
 import styled from 'styled-components';
 import Animation from '../components/Animation';
+import LogoPlusText from '../components/LogoPlusText';
+import Countdown from '../components/Countdown';
+import { mediaSizes } from '../style/utils';
 
 const StyledSection = styled.section`
   display: flex;
@@ -18,48 +21,70 @@ const StyledSection = styled.section`
   height: 100vh;
   scroll-snap-align: center;
 
-  h1 {
-    font-size: 4.5rem;
-  }
-  
   a {
     font-size: 2rem;
   }
-  
+
   &#home {
     background: url(${test1}) no-repeat center center/cover;
-    box-shadow:inset 0 0 0 2000px rgba(137, 107, 75, 0.1);
+    box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.4);
   }
 
   &#about {
     background: url(${test2}) no-repeat center center/cover;
-    box-shadow:inset 0 0 0 2000px rgba(207, 142, 77, 0.3);
+    box-shadow: inset 0 0 0 2000px rgba(207, 142, 77, 0.3);
+  }
+  
+  &#demo {
+    background: rgba(207, 142, 77, 0.3);
+    box-shadow: inset 0 0 0 2000px rgba(207, 142, 77, 0.3);
   }
 `;
 
-export const IndexPageTemplate = ({
-  title,
-  description,
-}) => (
+export const SmallScreenContent = styled.div`
+  display: none;
+  ${mediaSizes.lessThan('md')`
+    display: block;
+    padding: 4rem 0;
+  `}
+`;
+
+export const SmallScreenLogoWrapper= styled.div`
+  display: none;
+  ${mediaSizes.lessThan('md')`
+    display: block;
+  `}
+`;
+
+export const IndexPageTemplate = ({ title, description }) => (
   <>
-      <StyledSection id="home">
-          <Animation />
-      </StyledSection>
-      <StyledSection id="about">
-          <h1>{title}</h1>
-          <p>{description}</p>
-      </StyledSection>
+    <StyledSection id="home">
+      <Animation />
+      <SmallScreenLogoWrapper>
+        <LogoPlusText />
+      </SmallScreenLogoWrapper>
+      <SmallScreenContent>
+        <Countdown />
+      </SmallScreenContent>
+    </StyledSection>
+    <StyledSection id="about">
+      <h1>{title}</h1>
+      <p>{description}</p>
+    </StyledSection >
+    <StyledSection id="demo">
+      <h1>{title}</h1>
+      <p>{description}</p>
+    </StyledSection>
   </>
 );
 
-const IndexPage = ({ data }) => {
+const IndexPage = ({ data, pageContext }) => {
   const { frontmatter } = data.markdownRemark;
-
   return (
     <Layout>
       <IndexPageTemplate
-        title={frontmatter.title}
-        description={frontmatter.description}
+        title={pageContext.langSpecificData.title}
+        description={pageContext.langSpecificData.description}
       />
     </Layout>
   );

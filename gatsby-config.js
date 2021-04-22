@@ -1,13 +1,19 @@
 module.exports = {
   siteMetadata: {
     title: 'Pubik',
-    description:
-      'Pubik landing page',
+    description: 'Pubik landing page',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     'gatsby-plugin-styled-components',
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: ['Pacifico', 'Space Mono', 'Draft Beer'],
+        display: 'swap',
+      },
+    },
     {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
       resolve: 'gatsby-source-filesystem',
