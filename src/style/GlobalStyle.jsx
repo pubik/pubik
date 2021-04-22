@@ -7,7 +7,7 @@ export default createGlobalStyle`
   padding: 0;
 }
 body {
-   font-family: "Space Mono";
+   font-family: 'Space Mono';
    background: #333;
    color: #fff;
    line-height: 1.6;
