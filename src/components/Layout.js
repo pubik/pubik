@@ -4,8 +4,6 @@ import Navbar from '../components/Navbar';
 import useSiteMetadata from './SiteMetadata';
 import { withPrefix } from 'gatsby';
 import GlobalStyle from '../style/GlobalStyle';
-// import "@fontsource/space-mono";
-
 
 const TemplateWrapper = ({ children }) => {
   const { title, description } = useSiteMetadata();

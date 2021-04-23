@@ -34,7 +34,7 @@ const StyledSection = styled.section`
     background: url(${test2}) no-repeat center center/cover;
     box-shadow: inset 0 0 0 2000px rgba(207, 142, 77, 0.3);
   }
-  
+
   &#demo {
     background: rgba(207, 142, 77, 0.3);
     box-shadow: inset 0 0 0 2000px rgba(207, 142, 77, 0.3);
@@ -49,7 +49,7 @@ export const SmallScreenContent = styled.div`
   `}
 `;
 
-export const SmallScreenLogoWrapper= styled.div`
+export const SmallScreenLogoWrapper = styled.div`
   display: none;
   ${mediaSizes.lessThan('md')`
     display: block;
@@ -70,7 +70,7 @@ export const IndexPageTemplate = ({ title, description }) => (
     <StyledSection id="about">
       <h1>{title}</h1>
       <p>{description}</p>
-    </StyledSection >
+    </StyledSection>
     <StyledSection id="demo">
       <h1>{title}</h1>
       <p>{description}</p>
@@ -80,6 +80,7 @@ export const IndexPageTemplate = ({ title, description }) => (
 
 const IndexPage = ({ data, pageContext }) => {
   const { frontmatter } = data.markdownRemark;
+  console.log(pageContext.langSpecificData);
   return (
     <Layout>
       <IndexPageTemplate

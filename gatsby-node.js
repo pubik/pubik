@@ -18,17 +18,28 @@ exports.createPages = ({ actions, graphql }) => {
             frontmatter {
               templateKey
               cs {
-                description
-                title
+                aboutDescription
+                aboutTitle
+                demoDescription
+                demoTitle
+                homeDescription
+                homeTitle
               }
               en {
-                description
-                title
+                aboutDescription
+                aboutTitle
+                demoDescription
+                demoTitle
+                homeDescription
+                homeTitle
               }
               pl {
-                description
-                templateKey
-                title
+                aboutDescription
+                aboutTitle
+                demoDescription
+                demoTitle
+                homeDescription
+                homeTitle
               }
             }
           }
@@ -56,7 +67,7 @@ exports.createPages = ({ actions, graphql }) => {
             context: {
               id,
               lang,
-              langSpecificData: edge.node.frontmatter[lang]
+              langSpecificData: edge.node.frontmatter[lang],
             },
           });
         }

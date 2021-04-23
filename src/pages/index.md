@@ -1,13 +1,24 @@
 ---
 templateKey: index-page
 pl:
-  templateKey: index-page
-  title: Polish Title
-  description: Polish Description
+  homeTitle: Polish Title
+  homeDescription: Polish Description
+  aboutTitle: Polish Title
+  aboutDescription: Polish Description
+  demoTitle: Polish Title
+  demoDescription: Polish Description
 en:
-  title: English Title
-  description: English Description
+  homeTitle: English Title
+  homeDescription: English Description
+  aboutTitle: English Title
+  aboutDescription: English Description
+  demoTitle: English Title
+  demoDescription: English Description
 cs:
-  title: Czech Title
-  description: Czech Description
+  homeTitle: Czech Title
+  homeDescription: Czech Description
+  aboutTitle: Czech Title
+  aboutDescription: Czech Description
+  demoTitle: Czech Title
+  demoDescription: Czech Description
 ---

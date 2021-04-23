@@ -30,5 +30,17 @@ collections:
         i18n: true
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page", i18n: false}
-          - {label: Title, name: title, widget: string, i18n: true}
-          - {label: Description, name: description, widget: string, i18n: true}
+          - {label: Home Title, name: homeTitle, widget: string, i18n: true}
+          - {label: Home Description, name: homeDescription, widget: text, i18n: true}
+          - {label: Home Background, name: homeBackground, widget: image, required: false, i18n: false}
+          - {label: Home Font Color, name: homeFontColor, widget: color, required: false, i18n: false}
+          - {label: About Title, name: aboutTitle, widget: string, i18n: true}
+          - {label: About Description, name: aboutDescription, widget: text, i18n: true}
+          - {label: About Background, name: aboutBackground, widget: image, required: false, i18n: false}
+          - {label: About Font Color, name: aboutFontColor, widget: color, required: false, i18n: false}
+          - {label: Demo Title, name: demoTitle, widget: string, i18n: true}
+          - {label: Demo Description, name: demoDescription, widget: text, i18n: true}
+          - {label: Demo Background, name: demoBackground, widget: image, required: false, i18n: false}
+          - {label: Demo Font Color, name: demoFontColor, widget: color, required: false, i18n: false}
+          - {label: Demo Video Url, name: demoVideoUrl, widget: string, required: false, i18n: true}
+          - {label: Release Date, name: releaseDate, widget: datetime, required: false, i18n: duplicate}
