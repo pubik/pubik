@@ -35,10 +35,25 @@ const StyledSection = styled.section`
   &#about {
     background: url(${test2}) no-repeat center center/cover;
     box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.3);
+  }
+
+  &#demo {
+    background: rgba(207, 142, 77, 0.3);
+    box-shadow: inset 0 0 0 2000px rgba(207, 142, 77, 0.3);
+    ${mediaSizes.lessThan('md')`
+       padding: 80px 1rem 1rem;
+    `}
+    justify-content: unset;
+    align-items: center;
+    padding: 8rem;
+  }
+  
+  &#demo &#about {
     justify-content: unset;
     align-items: center;
     padding: 8rem;
     ${mediaSizes.lessThan('md')`
+
        padding: 80px 1rem 1rem;
       `}
     h2 {
@@ -48,7 +63,6 @@ const StyledSection = styled.section`
       ${mediaSizes.lessThan('md')`
         font-size: 2rem;
         padding-bottom: 1rem;
-
       `}
     }
     p {
@@ -58,11 +72,6 @@ const StyledSection = styled.section`
         font-size: 0.9rem;
       `}
     }
-  }
-
-  &#demo {
-    background: rgba(207, 142, 77, 0.3);
-    box-shadow: inset 0 0 0 2000px rgba(207, 142, 77, 0.3);
   }
 `;
 
