@@ -1,5 +1,4 @@
 ---
-templateKey: index-page
 pl:
   aboutFontColor: "#ffffff"
   aboutTitle: O co w tym chodzi?
@@ -27,8 +26,8 @@ pl:
   aboutBackground: /img/flavor_wheel.jpg
   homeDescription: Wkrótce dostępny
 en:
-  homeTitle: English Title
-  homeDescription: English Description
+  homeTitle: Pubik
+  homeDescription: Comming soon
   aboutTitle: What is this app for?
   aboutDescription: >-
     We are group of friends who came up with idea of improving setting up
