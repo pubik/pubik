@@ -20,7 +20,7 @@ pl:
   releaseDate: 2021-06-23T15:00:00.000Z
   homeFontColor: "#ffffff"
   demoTitle: Demo
-  demoVideoUrl: https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FPubikAplikacja%2Fvideos%2F457263982271565%2F&show_text=0&width=560
+  demoVideoUrl: https://www.youtube.com/embed/bkYZ4vDURow
   homeTitle: Pubik
   demoDescription: Wkrótce więcej filmów
   aboutBackground: /img/flavor_wheel.jpg
@@ -44,7 +44,7 @@ en:
   demoTitle: Demo
   demoDescription: More demos soon
   releaseDate: 2021-06-23T15:00:00.000Z
-  demoVideoUrl: https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FPubikAplikacja%2Fvideos%2F457263982271565%2F&show_text=0&width=560
+  demoVideoUrl: https://www.youtube.com/embed/bkYZ4vDURow
 cs:
   homeTitle: Pubik
   homeDescription: Již brzy
@@ -64,5 +64,5 @@ cs:
   demoTitle: Demo
   demoDescription: Další videa brzy
   releaseDate: 2021-06-23T15:00:00.000Z
-  demoVideoUrl: https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FPubikAplikacja%2Fvideos%2F457263982271565%2F&show_text=0&width=560
+  demoVideoUrl: https://www.youtube.com/embed/X92sZs_Gmco
 ---
