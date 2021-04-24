@@ -1,6 +1,5 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-
 import test1 from '../img/4.jpg';
 import test2 from '../img/2.jpg';
 import Layout from '../components/Layout';
@@ -143,7 +142,7 @@ export default IndexPage;
 
 export const pageQuery = graphql`
   query IndexPageTemplate {
-    markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
+    markdownRemark {
       frontmatter {
         pl {
           homeBackground {

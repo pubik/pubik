@@ -16,7 +16,6 @@ exports.createPages = ({ actions, graphql }) => {
               slug
             }
             frontmatter {
-              templateKey
               cs {
                 aboutDescription
                 aboutTitle

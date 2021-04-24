@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { FacebookFilled, InstagramFilled } from '@ant-design/icons';
 
-const StyledList = styled.ul`
+export const StyledList = styled.ul`
   list-style: none;
   width: 100%;
   justify-content: center;
