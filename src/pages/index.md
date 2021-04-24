@@ -2,7 +2,7 @@
 pl:
   aboutFontColor: "#ffffff"
   aboutTitle: O co w tym chodzi?
-  homeBackground: /img/products-full-width.jpg
+  homeBackground: /img/logo_600_nobg.png
   aboutDescription: >-
     Jesteśmy znajomymi, którzy wpadli na pomysł usprawnienia procesu spotkań z
     przyjaciółmi. 
@@ -16,14 +16,14 @@ pl:
 
     Do zobaczenia wkrótce!
   demoFontColor: "#ffffff"
-  demoBackground: /img/products-grid1.jpg
+  demoBackground: /img/logo_600_nobg.png
   releaseDate: 2021-06-23T15:00:00.000Z
   homeFontColor: "#ffffff"
   demoTitle: Demo
   demoVideoUrl: https://www.youtube.com/embed/bkYZ4vDURow
   homeTitle: Pubik
   demoDescription: Wkrótce więcej filmów
-  aboutBackground: /img/flavor_wheel.jpg
+  aboutBackground: /img/logo_600_nobg.png
   homeDescription: Wkrótce dostępny
 en:
   homeTitle: Pubik
