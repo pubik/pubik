@@ -29,7 +29,7 @@ collections:
         file: "src/pages/index.md"
         i18n: true
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page", i18n: false}
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page"}
           - {label: Home Title, name: homeTitle, widget: string, i18n: true}
           - {label: Home Description, name: homeDescription, widget: text, i18n: true}
           - {label: Home Background, name: homeBackground, widget: image, required: false, i18n: false}

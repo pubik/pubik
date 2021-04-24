@@ -8,7 +8,6 @@ const StyledCountdownWrapper = styled.div`
   align-items: center;
   justify-content: center;
   font-family: 'Space Mono';
-  //background: radial-gradient(#ffcc66, transparent);
   font-weight: bold;
   border-radius: 3px;
   box-sizing: border-box;
@@ -59,7 +58,7 @@ const StyledValue = styled.div`
   `};
 `;
 
-const ReleaseCountDown = () => {
+const ReleaseCountDown = ({ releaseDate }) => {
   const renderer = ({ days, hours, minutes, seconds, completed }) => {
     if (completed) {
       // Render a completed state
@@ -88,7 +87,7 @@ const ReleaseCountDown = () => {
       );
     }
   };
-  return <Countdown date={new Date('2021-06-23T17:00:00')} renderer={renderer} />;
+  return <Countdown date={new Date(releaseDate)} renderer={renderer} />;
 };
 
 export default ReleaseCountDown;

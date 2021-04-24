@@ -1,8 +1,9 @@
-import React from 'react';
-import { FacebookFilled, InstagramFilled, MenuOutlined } from '@ant-design/icons';
-import styled from 'styled-components';
+import React, { useState } from 'react';
+import { MenuOutlined } from '@ant-design/icons';
+import styled, { css } from 'styled-components';
 import Logo from '../img/logo.png';
 import { mediaSizes } from '../style/utils';
+import NavItems from './NavItems';
 
 const StyledNavbar = styled.nav`
   position: fixed;
@@ -19,33 +20,6 @@ const StyledNavbar = styled.nav`
         display: none;
     `};
     display: flex;
-    list-style: none;
-    width: 100%;
-    justify-content: center;
-
-    & div:last-child {
-      margin: auto;
-    }
-
-    li {
-      margin: 0 1rem;
-      padding: 1rem;
-
-      a {
-        text-decoration: none;
-        text-transform: uppercase;
-        color: #f4f4f4;
-
-        span {
-          font-size: 1.5rem;
-          color: white;
-        }
-      }
-
-      a:hover {
-        color: #d9b036;
-      }
-    }
   }
 `;
 
@@ -56,7 +30,7 @@ const StyledLogo = styled.img`
 export const Bars = styled(MenuOutlined)`
   display: none;
   color: #fff;
- ${mediaSizes.lessThan('sm')`
+  ${mediaSizes.lessThan('sm')`
     display: block;
     position: absolute;
     top: 1rem;
@@ -72,34 +46,52 @@ const StyledLogoName = styled.div`
   font-family: 'Pacifico';
 `;
 
+const StyledToggleMenu = styled.div`
+  ${mediaSizes.greaterThan('sm')`
+     display: none;
+     transform: translate(-100%);
+  `};
+  ${({ toggled }) => !toggled && 'display: none'}
+  ${({ toggled }) =>
+    toggled &&
+    css`
+      transform: translate(0px);
+      transition: transform 250ms ease-in-out;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      height: 100vh;
+      width: 100%;
+      z-index: 1;
+      background-color: #734d26;
+      opacity: 95%;
+      padding: 1rem;
+      
+      ul {
+        text-align: center;
+        font-size: 1.5rem;
+        
+        li a span {
+          font-size: 2rem;
+        }
+      }
+    `}
+`;
+
 const Navbar = () => {
+  const [toggled, setToggled] = useState(false);
   return (
-    <StyledNavbar>
-      <StyledLogo src={Logo} />
-      <StyledLogoName>Pubik</StyledLogoName>
-      <ul>
-        <li>
-          <a href="#home">Home</a>
-        </li>
-        <li>
-          <a href="#about">About</a>
-        </li>
-          <li>
-          <a href="#demo">Demo</a>
-        </li>
-        <li>
-          <a href={'https://www.facebook.com/PubikAplikacja'} target="_blank" rel="noreferrer">
-            <FacebookFilled />
-          </a>
-        </li>
-        <li>
-          <a href={'https://www.facebook.com/PubikAplikacja'} target="_blank" rel="noreferrer">
-            <InstagramFilled />
-          </a>
-        </li>
-      </ul>
-        <Bars />
-    </StyledNavbar>
+    <>
+      <StyledToggleMenu toggled={toggled}>
+        <NavItems closeMenu={() => setToggled(false)}/>
+      </StyledToggleMenu>
+      <StyledNavbar>
+        <StyledLogo src={Logo} />
+        <StyledLogoName>Pubik</StyledLogoName>
+        <NavItems closeMenu={() => setToggled(false)}/>
+        <Bars onClick={() => setToggled(!toggled)} />
+      </StyledNavbar>
+    </>
   );
 };
 

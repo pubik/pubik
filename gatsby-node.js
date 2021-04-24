@@ -24,6 +24,7 @@ exports.createPages = ({ actions, graphql }) => {
                 demoTitle
                 homeDescription
                 homeTitle
+                demoVideoUrl
               }
               en {
                 aboutDescription
@@ -61,7 +62,7 @@ exports.createPages = ({ actions, graphql }) => {
           createPage({
             path: `/${lang !== 'pl' ? lang : ''}`,
             component: path.resolve(
-              `src/templates/${String(edge.node.frontmatter.templateKey)}.js`,
+              `src/templates/index-page.js`, // TODO: templateKey not visible when i18n
             ),
             // additional data can be passed via context
             context: {

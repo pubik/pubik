@@ -1,4 +1,5 @@
 ---
+templateKey: index-page
 pl:
   aboutFontColor: "#ffffff"
   aboutTitle: O co w tym chodzi?
@@ -14,7 +15,7 @@ pl:
     Pierwszą wersję aplikacji planujemy wypuścić w lipcu tego roku. Będziemy Was informować o wszelkich postępach na bieżąco. Liczymy na Wasze opinie, dzięki którym będziemy mogli ulepszyć nasz produkt i upewnić się, że zmierzamy w dobrym kierunku.
 
 
-    Do zobaczenia w krótce!
+    Do zobaczenia wkrótce!
   demoFontColor: "#ffffff"
   demoBackground: /img/products-grid1.jpg
   releaseDate: 2021-06-23T15:00:00.000Z

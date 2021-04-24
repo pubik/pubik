@@ -1,10 +1,8 @@
 import React from 'react';
-
 import styled, { keyframes } from 'styled-components';
 import ReleaseCountdown from '../components/Countdown';
 import Logo1 from '../img/logo_600_noBg.png';
 import { mediaSizes } from '../style/utils';
-import LogoPlusText from './LogoPlusText';
 
 const StyledMain = styled.div`
   width: 100%;
@@ -38,15 +36,6 @@ const anim3 = keyframes`
   }
   to {
     left: 0%;
-  }
-`;
-
-const anim4 = keyframes`
-  from {
-    right: -100%;
-  }
-  to {
-    right: 0%;
   }
 `;
 
@@ -118,7 +107,6 @@ const StyledText1 = styled.div`
   `};
 `;
 
-
 export const StyledLogoContainer = styled.div`
   position: absolute;
   top: -100%;
@@ -127,23 +115,21 @@ export const StyledLogoContainer = styled.div`
   width: 100%;
 `;
 
-const Animation = () => (
-  <StyledMain>
-    <StyledLogoContainer>
-      <LogoPlusText />
-    </StyledLogoContainer>
-    <StyledBox1></StyledBox1>
-    <StyledBox2>
-      <StyledText1>
-        <ReleaseCountdown />
-      </StyledText1>
-    </StyledBox2>
-    {/*<StyledBox3>*/}
-    {/*  <StyledText2>*/}
-    {/*    PUBIK IS COMMING SOON!*/}
-    {/*  </StyledText2>*/}
-    {/*</StyledBox3>*/}
-  </StyledMain>
-);
+const Animation = ({ logo, releaseDate }) => {
+  const Logo = logo;
+  return (
+    <StyledMain>
+      <StyledLogoContainer>
+        <Logo />
+      </StyledLogoContainer>
+      <StyledBox1></StyledBox1>
+      <StyledBox2>
+        <StyledText1>
+          <ReleaseCountdown releaseDate={releaseDate}/>
+        </StyledText1>
+      </StyledBox2>
+    </StyledMain>
+  );
+};
 
 export default Animation;
