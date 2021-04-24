@@ -3,15 +3,13 @@ import React from 'react';
 const Video = ({ videoURL }) => (
   <div>
     <iframe
-      src={videoURL}
       width="560"
       height="315"
-      style={{border:'none', overflow: 'hidden'}}
-      scrolling="no"
+      src={videoURL}
+      title="Pubik"
       frameBorder="0"
-      allowFullScreen="true"
-      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-      allowFullScreen="true"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
     ></iframe>
   </div>
 );
