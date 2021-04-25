@@ -47,13 +47,12 @@ const StyledSection = styled.section`
     align-items: center;
     padding: 8rem;
   }
-  
-  &#demo &#about {
+
+  &#about {
     justify-content: unset;
     align-items: center;
     padding: 8rem;
     ${mediaSizes.lessThan('md')`
-
        padding: 80px 1rem 1rem;
       `}
     h2 {
@@ -69,6 +68,33 @@ const StyledSection = styled.section`
       text-align: left;
       font-size: 1.5rem;
       ${mediaSizes.lessThan('md')`
+        font-size: 0.9rem;
+      `}
+      padding-bottom: 2rem;
+    }
+  }
+  &#demo {
+    justify-content: unset;
+    align-items: center;
+    padding: 8rem;
+    ${mediaSizes.lessThan('md')`
+       padding: 80px 1rem 1rem;
+    `}
+    h2 {
+      text-align: center;
+      font-size: 3rem;
+      padding-bottom: 2rem;
+      ${mediaSizes.lessThan('md')`
+        font-size: 2rem;
+        padding-bottom: 1rem;
+      `}
+    }
+    p {
+      text-align: left;
+      font-size: 1.5rem;
+      padding-bottom: 1rem;
+      ${mediaSizes.lessThan('md')`
+
         font-size: 0.9rem;
       `}
     }
@@ -113,7 +139,7 @@ export const IndexPageTemplate = ({
   return (
     <>
       <StyledSection id="home">
-        <Animation logo={Logo} releaseDate={releaseDate}/>
+        <Animation logo={Logo} releaseDate={releaseDate} />
         <SmallScreenLogoWrapper>
           <Logo />
         </SmallScreenLogoWrapper>
@@ -128,7 +154,7 @@ export const IndexPageTemplate = ({
       <StyledSection id="demo">
         <h2>{demoTitle}</h2>
         <p>{demoDescription}</p>
-        <Video videoURL={demoVideoUrl}/>
+        <Video videoURL={demoVideoUrl} />
       </StyledSection>
     </>
   );

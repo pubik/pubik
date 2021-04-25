@@ -16,6 +16,9 @@ const StyledFooter = styled.div`
 
   ul {
     display: flex;
+    li a {
+      text-transform: unset;
+    }
   }
 `;
 
